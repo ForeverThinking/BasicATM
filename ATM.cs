@@ -6,6 +6,7 @@ namespace BasicATM
   {
     static void Main(string[] args)
     {
+      // set variables
       int balance, depositAmt, withdrawAmt;
       int choice = 0, pin = 0;
       Console.WriteLine("Enter your ledger balance");
@@ -13,6 +14,7 @@ namespace BasicATM
       Console.WriteLine("Enter your PIN Number ");
       pin = int.Parse(Console.ReadLine());
 
+      // reject user if incirrect pin
       if (pin != 1234)
       {
         Console.WriteLine("Invalid PIN");
@@ -32,11 +34,11 @@ namespace BasicATM
 
         switch (choice)
         {
-          case 1:
+          case 1: // check balance
             Console.WriteLine("\n Your balance is $ : {0} ", balance);
             Console.ReadLine();
             break;
-          case 2:
+          case 2: // withdraw amount
             Console.WriteLine("\n Enter the amount you want to withdraw: ");
             withdrawAmt = int.Parse(Console.ReadLine());
             if (withdrawAmt % 100 != 0)
@@ -54,13 +56,13 @@ namespace BasicATM
               Console.WriteLine("\n Current Balance is {0}", balance);
             }
             break;
-          case 3:
+          case 3: // deposit amount
             Console.WriteLine("\n Enter amount you want to deposit");
             depositAmt = int.Parse(Console.ReadLine());
             balance = balance + depositAmt;
             Console.WriteLine("Your ledger balance is {0}", balance);
             break;
-          case 4:
+          case 4: // leave ATM
             Console.WriteLine("\n Thank you for using C# Cash services.");
             break;
         }
