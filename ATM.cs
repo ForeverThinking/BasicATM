@@ -14,7 +14,7 @@ namespace BasicATM
       Console.WriteLine("Enter your PIN Number ");
       pin = int.Parse(Console.ReadLine());
 
-      // reject user if incirrect pin
+      // reject user if incorrect pin
       if (pin != 1234)
       {
         Console.WriteLine("Invalid PIN");
